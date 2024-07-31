@@ -39,3 +39,42 @@ venv/bin/activate
 cd section6/video_code/
 python -m behave tests/acceptance
 ```
+
+
+## Casos de Teste - Funcionalidade de Busca
+
+## Caso de Teste 1: Pesquisa Válida
+
+**Título:** Pesquisa por um termo existente.  
+**Cenário:** Usuário pesquisa por um termo existente.  
+**Prioridade:** Alta  
+
+**Dados de Teste:**  
+- Termo de busca: "empréstimo"
+
+**Passo a Passo com Resultado Esperado:**
+1. **Ação:** Clicar no ícone de lupa no canto superior direito.
+   - **Resultado Esperado:** O campo de busca é exibido.
+2. **Ação:** Digitar "empréstimo" no campo de busca.
+   - **Resultado Esperado:** O termo "empréstimo" aparece no campo de busca.
+3. **Ação:** Pressionar Enter.
+   - **Resultado Esperado:** A página exibe uma lista de artigos relacionados ao termo "empréstimo".
+
+---
+
+## Caso de Teste 2: Pesquisa Inválida
+
+**Título:** Pesquisa por um termo inexistente.  
+**Cenário:** Usuário pesquisa por um termo inexistente.  
+**Prioridade:** Média  
+
+**Dados de Teste:**  
+- Termo de busca: "NAO CONSTA"
+
+**Passo a Passo com Resultado Esperado:**
+1. **Ação:** Clicar no ícone de lupa no canto superior direito.
+   - **Resultado Esperado:** O campo de busca é exibido.
+2. **Ação:** Digitar "NAO CONSTA" no campo de busca.
+   - **Resultado Esperado:** O termo "NAO CONSTA" aparece no campo de busca.
+3. **Ação:** Pressionar Enter.
+   - **Resultado Esperado:** A página exibe uma mensagem informando que não foram encontrados resultados para o termo pesquisado.
