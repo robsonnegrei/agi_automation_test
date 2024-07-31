@@ -47,7 +47,7 @@ python -m behave tests/acceptance
 
 **Título:** Pesquisa por um termo existente.  
 **Cenário:** Usuário pesquisa por um termo existente.  
-**Prioridade:** Alta  
+**Prioridade:** ALTA  
 
 **Dados de Teste:**  
 - Termo de busca: "empréstimo"
@@ -66,7 +66,7 @@ python -m behave tests/acceptance
 
 **Título:** Pesquisa por um termo inexistente.  
 **Cenário:** Usuário pesquisa por um termo inexistente.  
-**Prioridade:** Média  
+**Prioridade:** ALTA  
 
 **Dados de Teste:**  
 - Termo de busca: "NAO CONSTA"
