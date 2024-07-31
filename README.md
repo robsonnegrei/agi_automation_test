@@ -53,12 +53,16 @@ python -m behave tests/acceptance
 - Termo de busca: "empréstimo"
 
 **Passo a Passo com Resultado Esperado:**
-1. **Ação:** Clicar no ícone de lupa no canto superior direito.
-   - **Resultado Esperado:** O campo de busca é exibido.
-2. **Ação:** Digitar "empréstimo" no campo de busca.
-   - **Resultado Esperado:** O termo "empréstimo" aparece no campo de busca.
-3. **Ação:** Pressionar Enter.
-   - **Resultado Esperado:** A página exibe uma lista de artigos relacionados ao termo "empréstimo".
+1. **Ação:** 
+@GIVEN Estou na home page do Blog
+2. **Ação:** 
+@WHEN Eu clico no ícone de lupa no canto superior direito.
+3. **Ação:** 
+@AND Digitar "empréstimo" no campo de busca.
+4. **Ação:** 
+@AND Pressionar Enter.
+1. **Resultado Esperado** 
+@THEN  A página exibe uma lista de artigos relacionados ao termo "empréstimo".
 
 ---
 
@@ -72,9 +76,15 @@ python -m behave tests/acceptance
 - Termo de busca: "NAO CONSTA"
 
 **Passo a Passo com Resultado Esperado:**
-1. **Ação:** Clicar no ícone de lupa no canto superior direito.
-   - **Resultado Esperado:** O campo de busca é exibido.
-2. **Ação:** Digitar "NAO CONSTA" no campo de busca.
-   - **Resultado Esperado:** O termo "NAO CONSTA" aparece no campo de busca.
-3. **Ação:** Pressionar Enter.
-   - **Resultado Esperado:** A página exibe uma mensagem informando que não foram encontrados resultados para o termo pesquisado.
+
+**Passo a Passo com Resultado Esperado:**
+1. **Ação:** 
+@GIVEN Estou na home page do Blog
+2. **Ação:** 
+@WHEN Eu clico no ícone de lupa no canto superior direito.
+3. **Ação:** 
+@AND Digitar "NAO CONSTA" no campo de busca.
+4. **Ação:** 
+@AND Pressionar Enter.
+1. **Resultado Esperado** 
+@THEN  A página exibe uma mensagem informando que não foram encontrados resultados para o termo pesquisado.
