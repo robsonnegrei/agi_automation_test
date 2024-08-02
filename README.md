@@ -1,47 +1,121 @@
-# Set up
+# DO QUE SE TRATA ESTE PROJETO?
 
-We'll need a few things to install for this section:
 
+
+# Automatização de Testes - Blog do Agi
+
+Este projeto automatiza testes de busca no Blog do Agi usando Selenium e Behave. Abaixo estão as instruções de configuração e execução para Linux, macOS e Windows.
+
+## Instruções para Uso
+
+1. **Clone o Repositório:**
+
+   ```bash
+   git clone https://github.com/seu-usuario/blog_automation.git
+   cd blog_automation
+   ```
+
+## Estrutura do Projeto
+
+```
+blog_automation/
+│
+├── features/
+│   ├── search.feature
+│
+├── features/steps/
+│   └── search_steps.py
+│
+├── environment.py
+│
+├── run_tests.py
+│
+└── requirements.txt
+```
+
+## Dependências do Ambiente para iniciar a instalação:
+
+### Verifique as Dependencias:
+Certifique-se de ter Python 3.8 ou superior instalado. Instale as dependências usando `pip`:
+
+## INSTALAÇÂO DOS REQUISITOS:
+Vamos precisar instalar algums dependencias para rodar esta aplicação:
+
+```bash
+pip install -r requirements.txt
+```
+
+Contém:
 - https://sites.google.com/a/chromium.org/chromedriver/downloads
 - behave (http://pythonhosted.org/behave/)
 - selenium (http://selenium-python.readthedocs.io/installation.html)
-- install requirements via pip install into the python Virtual env for this project by using requirements.txt file from source directory
+- install requirements via pip install dentro da sua Virtual env: para este projeto estamos usando um arquivo requirements.txt no diretório principal
 
-### Linux/MacOS
-``` bash
-source venv/bin/activate
-pip install -r requirements.txt 
-```
+## EXECUTANDO O PROJETO:
+
+### Linux / macOS
+
+1. **Instale o ChromeDriver:**
+
+   Utilize `webdriver-manager` para instalar o ChromeDriver:
+
+   ```bash
+   pip install webdriver-manager
+   ```
+
+2. **Instale as dependências:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Execute os testes:**
+
+   ```bash
+   python run_tests.py
+   ```
 
 ### Windows
-``` bash
-pip install virtualenv
-virtualenv venv
-venv\Scripts\Activate.bat
-```
+
+1. **Instale o ChromeDriver:**
+
+   - Baixe o ChromeDriver correspondente à sua versão do Chrome [aqui](https://sites.google.com/chromium.org/driver/).
+   - Extraia o `chromedriver.exe` para um diretório acessível, como `C:\Drivers\`.
+
+2. **Adicione o caminho do ChromeDriver ao sistema:**
+
+   Adicione a variável de ambiente `PATH` apontando para o diretório onde você extraiu `chromedriver.exe`.
+
+3. **Instale as dependências:**
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Execute os testes:**
+
+   ```bash
+   python run_tests.py
+   ```
 
 
-## Running the tests
 
-To run the tests, you'll need to do this in a terminal (but remember to have the Flask app running!):
+## Arquivos de Configuração
 
-### Linux/MacOS
+### `environment.py`
+### `run_tests.py`
+### `search.feature`
+### `search_steps.py`
 
-```bash
-source venv/bin/activate
-cd section6/video_code/
-python -m behave tests/acceptance
-```
-### Windows
+## Relatórios
 
-```bash
-venv/bin/activate
-cd section6/video_code/
-python -m behave tests/acceptance
-```
+Os testes geram um relatório HTML em `report.html`. Abra este arquivo em um navegador para visualizar os resultados dos testes.
 
 
-## Casos de Teste - Funcionalidade de Busca
+
+## Casos de Teste - Funcionalidade de Busca 
+
+@Arquivo **busca.feature** na pasta (tests/features)
 
 ## Caso de Teste 1: Pesquisa Válida
 
