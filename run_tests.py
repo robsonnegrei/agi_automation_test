@@ -6,7 +6,7 @@ def run_tests():
         '--format', 'pretty',  # Formato de saída (pode ser progress, pretty, html, etc.)
         '--no-capture',          # Não capturar saída padrão dos steps
         '--no-capture-stderr',   # Não capturar saída de erro dos steps
-        '--stop',                # Parar no primeiro erro ou falha
+        # '--stop',                # Parar no primeiro erro ou falha
         'features'               # Caminho para o diretório de features
     ]
     sys.argv = ['behave'] + args
