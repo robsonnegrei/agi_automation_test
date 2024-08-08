@@ -124,19 +124,16 @@ Os testes geram um relatório HTML em `report.html`. Abra este arquivo em um nav
 **Prioridade:** ALTA  
 
 **Dados de Teste:**  
-- Termo de busca: "empréstimo"
+- Termo de busca: "saque-aniversario"
 
-**Passo a Passo com Resultado Esperado:**
-1. **Ação:** 
-@GIVEN Estou na home page do Blog
-2. **Ação:** 
-@WHEN Eu clico no ícone de lupa no canto superior direito.
-3. **Ação:** 
-@AND Digitar "empréstimo" no campo de busca.
-4. **Ação:** 
-@AND Pressionar Enter.
-1. **Resultado Esperado** 
-@THEN  A página exibe uma lista de artigos relacionados ao termo "empréstimo".
+@high
+  Scenario: Usuario pesquisa por um termo existente.                                # features\busca.feature:4
+    Given Estou na home page do Blog                                                # features\steps\busca_steps.py:7
+    When Eu clico no icone de lupa no canto superior direito                        # features\steps\busca_steps.py:12
+    When Digito saque-aniversario no campo de busca                                 # features\steps\busca_steps.py:17
+    When Pressiono Enter                                                            # features\steps\busca_steps.py:23
+    Then A pagina exibe o artigo post-4302 na lista de artigos relacionados a busca # features\steps\busca_steps.py:28
+
 
 ---
 
@@ -150,15 +147,11 @@ Os testes geram um relatório HTML em `report.html`. Abra este arquivo em um nav
 - Termo de busca: "NAO CONSTA"
 
 **Passo a Passo com Resultado Esperado:**
+ @high
+  Scenario: Usuario pesquisa por um termo inexistente.                # features\busca.feature:12
+    Given Estou na home page do Blog                                  # features\steps\busca_steps.py:7
+    When Eu clico no icone de lupa no canto superior direito          # features\steps\busca_steps.py:12
+    When Digito NAO-CONSTA no campo de busca                          # features\steps\busca_steps.py:17
+    When Pressiono Enter                                              # features\steps\busca_steps.py:23
+    Then A pagina exibe uma mensagem nao foram encontrados resultados # features\steps\busca_steps.py:37
 
-**Passo a Passo com Resultado Esperado:**
-1. **Ação:** 
-@GIVEN Estou na home page do Blog
-2. **Ação:** 
-@WHEN Eu clico no ícone de lupa no canto superior direito.
-3. **Ação:** 
-@AND Digitar "NAO CONSTA" no campo de busca.
-4. **Ação:** 
-@AND Pressionar Enter.
-1. **Resultado Esperado** 
-@THEN  A página exibe uma mensagem informando que não foram encontrados resultados para o termo pesquisado.
